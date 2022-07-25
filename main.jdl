@@ -54,6 +54,6 @@ deployment {
     serviceDiscoveryType no
     istio true
     kubernetesNamespace jhipster-project
-    kubernetesServiceType Ingress
+    kubernetesServiceType LoadBalancer
     ingressDomain "apis.pvcombank.com.vn"
 }

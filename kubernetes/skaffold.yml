@@ -1,0 +1,18 @@
+apiVersion: skaffold/v1
+kind: Config
+build:
+  artifacts:
+    - image: registry.pvcb.vn/pvcombank/myapp
+      context: ../myApp
+      jib: {}
+    - image: registry.pvcb.vn/pvcombank/myapp1
+      context: ../myApp1
+      jib: {}
+    - image: registry.pvcb.vn/pvcombank/myapp2
+      context: ../myApp2
+      jib: {}
+  tagPolicy:
+    envTemplate:
+      template: "{{.IMAGE_NAME}}:latest"
+deploy:
+  kustomize: {}
