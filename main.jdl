@@ -6,7 +6,6 @@ application {
     packageName vn.com.pvcombank,
     authenticationType jwt,
     prodDatabaseType mysql,
-    clientFramework react
   }
   entities *
 }
@@ -50,21 +49,11 @@ relationship OneToMany {
  */
 deployment {
     deploymentType kubernetes
-    appsFolders [apiGateway, account, card]
-    dockerRepositoryName "docker.pvcb.vn/pvcombank"
+    appsFolders [myApp, myApp1, myApp2]
+    dockerRepositoryName "registry.pvcb.vn/pvcombank"
     serviceDiscoveryType no
-    kubernetesNamespace openbanking
+    istio true
+    kubernetesNamespace jhipster-project
     kubernetesServiceType Ingress
     ingressDomain "apis.pvcombank.com.vn"
-}
-
-deployment {
-  deploymentType kubernetes
-  appsFolders [store, invoice, notification, product]
-  dockerRepositoryName "yourDockerLoginName"
-  serviceDiscoveryType no
-  istio autoInjection
-  kubernetesServiceType Ingress
-  kubernetesNamespace jhipster
-  ingressDomain "jhipster.192.168.99.100.nip.io"
 }
