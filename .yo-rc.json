@@ -1,0 +1,16 @@
+{
+  "generator-jhipster": {
+    "appsFolders": ["myApp", "myApp1", "myApp2"],
+    "clusteredDbApps": {},
+    "directoryPath": "./",
+    "dockerPushCommand": "docker push",
+    "dockerRepositoryName": "registry.pvcb.vn/pvcombank",
+    "ingressDomain": "apis.pvcombank.com.vn",
+    "istio": true,
+    "jwtSecretKey": "OTNhOTEyMGYyNTJlMjkyNzliM2ZhZTMyZTM0ZTIzZGNjOGU2MmUzN2I0MDFjYTdkMzYyOWE0NmRkNWM3OTQ4MmU3ZmVjNDA2ZTIyNWRiZDhlM2I2MTIwMmVmMDNhYTdjZGY5MA==",
+    "kubernetesNamespace": "jhipster-project",
+    "kubernetesServiceType": "LoadBalancer",
+    "monitoring": "prometheus",
+    "serviceDiscoveryType": "eureka"
+  }
+}
