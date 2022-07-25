@@ -1,0 +1,70 @@
+
+application {
+  config {
+    baseName myApp,
+    applicationType microservice,
+    packageName vn.com.pvcombank,
+    authenticationType jwt,
+    prodDatabaseType mysql,
+    clientFramework react
+  }
+  entities *
+}
+
+application {
+  config {
+    baseName myApp1,
+    applicationType microservice,
+    packageName vn.com.pvcombank,
+    authenticationType jwt,
+    prodDatabaseType mysql,
+  }
+  entities A, B
+}
+
+application {
+  config {
+    baseName myApp2,
+    applicationType microservice,
+    packageName vn.com.pvcombank,
+    authenticationType jwt,
+    prodDatabaseType mysql,
+  }
+  entities C
+}
+
+entity A {}
+
+entity B {}
+
+entity C {}
+
+entity D {}
+
+relationship OneToMany {
+  A to B
+}
+
+/**
+ * DEPLOYMENT
+ */
+deployment {
+    deploymentType kubernetes
+    appsFolders [apiGateway, account, card]
+    dockerRepositoryName "docker.pvcb.vn/pvcombank"
+    serviceDiscoveryType no
+    kubernetesNamespace openbanking
+    kubernetesServiceType Ingress
+    ingressDomain "apis.pvcombank.com.vn"
+}
+
+deployment {
+  deploymentType kubernetes
+  appsFolders [store, invoice, notification, product]
+  dockerRepositoryName "yourDockerLoginName"
+  serviceDiscoveryType no
+  istio autoInjection
+  kubernetesServiceType Ingress
+  kubernetesNamespace jhipster
+  ingressDomain "jhipster.192.168.99.100.nip.io"
+}
