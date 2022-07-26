@@ -1,7 +1,7 @@
 
 application {
   config {
-    baseName myApp,
+    baseName myApp0,
     applicationType microservice,
     packageName vn.com.pvcombank,
     authenticationType jwt,
@@ -49,7 +49,7 @@ relationship OneToMany {
  */
 deployment {
     deploymentType kubernetes
-    appsFolders [myApp, myApp1, myApp2]
+    appsFolders [myApp0, myApp1, myApp2]
     dockerRepositoryName "registry.pvcb.vn/pvcombank"
     serviceDiscoveryType no
     istio true
